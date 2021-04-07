@@ -13,6 +13,12 @@ test('displays app with expected title text', async () => {
   expect(titleElement.textContent).toBe("Football Score Board");
 });
 
+test('checks if the app has the child component Scoreboard', async () => {
+  render(<App />);
+  const scoreboardApp = await screen.findByTestId("scoreboardApp");
+  expect(scoreboardApp).toBeInTheDocument();
+});
+
 //next -> verify that app has child component ScoreBoard
 // followed by ScoreBoard.test.js -> checking table specifics
 // Run fails ...
