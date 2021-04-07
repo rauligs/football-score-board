@@ -4,3 +4,5 @@ describe('Score Board', () => {
         cy.get('[data-testid="titleText"]').should('have.text', 'Football Score Board')
     });
 });
+
+// - next -> test score board table is present
