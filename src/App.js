@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <span data-testid="titleText">Football Score Board</span>
-      <Scoreboard data-testid="scoreboardApp" />
+      <Scoreboard />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
