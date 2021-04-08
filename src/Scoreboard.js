@@ -12,13 +12,13 @@ function Scoreboard() {
         <div className="Scoreboard" data-testid="scoreboardApp">
             <h1 data-testid="title">Scoreboard</h1>
             <div data-testid="liveGame">
-                <span data-testid="homeTeam" >{homeTeam}</span>
+                <span data-testid="homeTeam" >Mexico</span>
                 <span data-testid="score" >0 - 0</span>
-                <span data-testid="awayTeam" >{awayTeam}</span>
+                <span data-testid="awayTeam" >Canada</span>
             </div>
             <div data-testid="Summary">
-                {endedMatches.sort((a, b) => (a.result.home + a.result.away) - (b.result.home + b.result.away))
-                    .map(match => <div data-testid="Match">{`${match.home} ${match.result.home} - ${match.away} ${match.result.away}`}</div>)}
+                {endedMatches.sort((a, b) => (b.result.home + b.result.away) - (a.result.home + a.result.away))
+                    .map((match, i) => <div key={`match-${i + 1}`} data-testid="Match">{`${match.home} ${match.result.home} - ${match.away} ${match.result.away}`}</div>)}
             </div>
         </div>
     );
