@@ -1,6 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
+jest.mock('./ScoreBoard', ()=> () => <div data-testid={"score-board"}/>)
+
 test('renders learn react link', () => {
   render(<App />);
   const linkElement = screen.getByText(/learn react/i);
@@ -14,9 +16,8 @@ test('displays app with expected title text', async () => {
 });
 
 test('checks if the app has the child component Scoreboard', async () => {
-  render(<App />);
-  const scoreboardApp = await screen.findByTestId("scoreboardApp");
-  expect(scoreboardApp).toBeInTheDocument();
+  const {getByTestId} = render(<App />);
+  expect(getByTestId("score-board")).toBeInTheDocument()
 });
 
 //next -> verify that app has child component ScoreBoard
