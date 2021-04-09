@@ -7,6 +7,6 @@ describe('Score Board', () => {
 
     it('The Board is Visible', () => {
         cy.visit('http://localhost:3000');
-        cy.get('[data-testid="scoreboardApp"]').should('be.visible');
+        cy.get('[data-testid="scoreBoardApp"]').should('be.visible');
     });
 });
